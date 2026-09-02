@@ -1,0 +1,91 @@
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| 1_30_test          |
+| batch1346_db       |
+| college            |
+| company            |
+| e_commerce         |
+| information_schema |
+| mysql              |
+| performance_schema |
+| shopping           |
+| sys                |
+| xyz_company        |
++--------------------+
+11 rows in set (0.01 sec)
+
+mysql> USE batch1346_db;
+Database changed
+mysql> SHOW TABLES;
++------------------------+
+| Tables_in_batch1346_db |
++------------------------+
+| student_info           |
++------------------------+
+1 row in set (0.00 sec)
+
+mysql> DESCRIBE student_info;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| roll      | int         | NO   | PRI | NULL    |       |
+| stud_name | varchar(50) | YES  |     | NULL    |       |
+| subject   | varchar(10) | YES  |     | NULL    |       |
+| marks     | int         | YES  |     | NULL    |       |
+| city      | varchar(20) | YES  |     | NULL    |       |
+| phone     | char(10)    | YES  |     | NULL    |       |
+| email     | varchar(25) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> INSERT INTO student_info VALUES (1,'Rob','Physics',81,'Pune','8956231447','rob125@gmail.com'),
+    -> (2,'Ana','Chemistry',88,'Mumbai','9926631849','ana12@gmail.com'),
+    -> (3,'Rupa','Maths',91,'Nashik','7925638839','rupa112@gmail.com'),
+    -> (4,'Jon','Biology',94,'Satara','8125638146','jon69@gmail.com'),
+    -> (5,'Megha','English',87,'Pune','9932564121','megha79@gmail.com');
+Query OK, 5 rows affected (0.00 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO student_info VALUES (6,'Kedar','Physics',82,'Pune','9365241578','kedar52@gmail.com'),
+    -> (7,'Nandini','Sanskrit',99,'Satara','7485961223','nandani22@gmail.com'),
+    -> (8,'Ronny','Marathi',96,'Pune','9685743212','ronny72@gmail.com'),
+    -> (9,'Sweety','Physics',84,'Mumbai','9382716545','sweety23@gmail.com'),
+    -> (10,'Dolly','Maths',91,'Nashik','7485961233','dolly58@gmail.com');
+Query OK, 5 rows affected (0.00 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> SELECT roll, stud_name, subject, marks, city, phone, email FROM student_info;
++------+-----------+-----------+-------+--------+------------+---------------------+
+| roll | stud_name | subject   | marks | city   | phone      | email               |
++------+-----------+-----------+-------+--------+------------+---------------------+
+|    1 | Rob       | Physics   |    81 | Pune   | 8956231447 | rob125@gmail.com    |
+|    2 | Ana       | Chemistry |    88 | Mumbai | 9926631849 | ana12@gmail.com     |
+|    3 | Rupa      | Maths     |    91 | Nashik | 7925638839 | rupa112@gmail.com   |
+|    4 | Jon       | Biology   |    94 | Satara | 8125638146 | jon69@gmail.com     |
+|    5 | Megha     | English   |    87 | Pune   | 9932564121 | megha79@gmail.com   |
+|    6 | Kedar     | Physics   |    82 | Pune   | 9365241578 | kedar52@gmail.com   |
+|    7 | Nandini   | Sanskrit  |    99 | Satara | 7485961223 | nandani22@gmail.com |
+|    8 | Ronny     | Marathi   |    96 | Pune   | 9685743212 | ronny72@gmail.com   |
+|    9 | Sweety    | Physics   |    84 | Mumbai | 9382716545 | sweety23@gmail.com  |
+|   10 | Dolly     | Maths     |    91 | Nashik | 7485961233 | dolly58@gmail.com   |
++------+-----------+-----------+-------+--------+------------+---------------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT stud_name, email FROM student_info;
++-----------+---------------------+
+| stud_name | email               |
++-----------+---------------------+
+| Rob       | rob125@gmail.com    |
+| Ana       | ana12@gmail.com     |
+| Rupa      | rupa112@gmail.com   |
+| Jon       | jon69@gmail.com     |
+| Megha     | megha79@gmail.com   |
+| Kedar     | kedar52@gmail.com   |
+| Nandini   | nandani22@gmail.com |
+| Ronny     | ronny72@gmail.com   |
+| Sweety    | sweety23@gmail.com  |
+| Dolly     | dolly58@gmail.com   |
++-----------+---------------------+
+10 rows in set (0.00 sec)
