@@ -26,6 +26,7 @@ SET salary = salary - 21000
 WHERE name = 'John';
 
 -- Assignment 2
+
 -- 1. 
 ALTER TABLE employee2
 ADD COLUMN branch_location VARCHAR(100);
