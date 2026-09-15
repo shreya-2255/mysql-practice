@@ -1,4 +1,6 @@
+
 -- Assignment 1
+
 -- 1.
 SELECT name FROM employee WHERE salary > 20000;
 -- 2.
